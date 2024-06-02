@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      BATALHA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Buscar Pokémon</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>{{this.pokemon2.name | uppercase}}</ion-card-title>
+      <ion-label [ngStyle]="{'color': getResultadoColor()}">{{pokeAPIService.resultado}}</ion-label>
+      <ion-img alt="" src="{{this.pokemon2.front_default}}"></ion-img>
+    </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Abilities: {{this.pokemon2.abilities}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Height: {{this.pokemon2.height}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weigth: {{this.pokemon2.weight}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
